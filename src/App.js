@@ -12,6 +12,12 @@ class App extends React.Component {
     render() {
       return (
         <>
+          <form>
+            <label>
+              Have a breed in mind?
+              <input type='text' />
+            </label>
+          </form>
         </>
       )
     
