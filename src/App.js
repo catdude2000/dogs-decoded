@@ -3,17 +3,19 @@ import './App.css';
 import axios from 'axios';
 // require('dotenv').config();
 
-let APP_SERVER = process.env.REACT_APP_SERVER;
+// let APP_SERVER = process.env.REACT_APP_SERVER;
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstDogsPulled: [],
+      // firstDogsPulled: [],
       dogShown: [],
       showDog: false
     };
   }
+
+  // let APP_SERVER = process.env.REACT_APP_SERVER;
 
 handleInput = (event) => {
   this.setState({
@@ -24,8 +26,8 @@ handleInput = (event) => {
   getDogs = async (event) => {
     event.preventDefault();
     try {
-      // console.log(APP_SERVER, 'APPSERVER')
-      let dogResults = await axios.get(`${process.env.APP_SERVER}/dogInfo`);
+      console.log(process.env.REACT_APP_SERVER, 'APPSERVER')
+      let dogResults = await axios.get(`${process.env.REACT_APP_SERVER}/dogInfo`);
       console.log(dogResults, 'dogResults');
       this.setState({
         dogShown: dogResults.data,
