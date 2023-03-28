@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 // require('dotenv').config();
 
-// let APP_SERVER = process.env.REACT_APP_SERVER;
+let APP_SERVER = process.env.REACT_APP_SERVER;
 
 class App extends React.Component {
   constructor(props) {
