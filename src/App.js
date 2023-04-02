@@ -23,11 +23,13 @@ handleInput = (event) => {
   });
 }
 
+
+
   getDogs = async (event) => {
     event.preventDefault();
     try {
       console.log(process.env.REACT_APP_SERVER, 'APPSERVER')
-      let dogResults = await axios.get(`${process.env.REACT_APP_SERVER}/dogInfo`);
+      let dogResults = await axios.get(`${process.env.REACT_APP_SERVER}/dogInfo?searchQuery=${this.state.dogEntered}`);
       console.log(dogResults, 'dogResults');
       this.setState({
         dogShown: dogResults.data,
