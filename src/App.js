@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-
+import Dog from './Dog';
 // let APP_SERVER = process.env.REACT_APP_SERVER;
 
 class App extends React.Component {
@@ -52,7 +52,10 @@ handleInput = (event) => {
             </label>
             <button type='submit'>Search</button>
           </form>
-          {/* {this.state.dogShown} */}
+          <Dog
+            dogFeatured={this.state.dogShown}
+            dogAppears={this.state.showDog}
+          />
         </>
       )
     
