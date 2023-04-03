@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-// require('dotenv').config();
 
 // let APP_SERVER = process.env.REACT_APP_SERVER;
 
@@ -10,12 +9,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       // firstDogsPulled: [],
-      dogShown: [],
+      dogShown: '',
       showDog: false
     };
   }
 
-  // let APP_SERVER = process.env.REACT_APP_SERVER;
 
 handleInput = (event) => {
   this.setState({
@@ -24,17 +22,17 @@ handleInput = (event) => {
 }
 
 
-
   getDogs = async (event) => {
     event.preventDefault();
     try {
-      console.log(process.env.REACT_APP_SERVER, 'APPSERVER')
+      console.log(process.env.REACT_APP_SERVER, 'APPSERVER');
       let dogResults = await axios.get(`${process.env.REACT_APP_SERVER}/dogInfo?searchQuery=${this.state.dogEntered}`);
-      console.log(dogResults, 'dogResults');
+      console.log(dogResults.data[0], 'dogResults');
       this.setState({
-        dogShown: dogResults.data,
+        dogShown: dogResults.data[0],
         showDog: true
       })
+      console.log(this.state.dogShown, 'dogshwo')
     }
     catch (error) {
       this.setState({
@@ -44,8 +42,6 @@ handleInput = (event) => {
     }
   };
   
-
-
     render() {
       return (
         <>
@@ -56,6 +52,7 @@ handleInput = (event) => {
             </label>
             <button type='submit'>Search</button>
           </form>
+          {this.state.dogShown}
         </>
       )
     
