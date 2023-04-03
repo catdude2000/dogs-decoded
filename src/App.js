@@ -52,7 +52,7 @@ handleInput = (event) => {
             </label>
             <button type='submit'>Search</button>
           </form>
-          {this.state.dogShown}
+          {/* {this.state.dogShown} */}
         </>
       )
     
