@@ -1,12 +1,20 @@
 import React from 'react';
-// import { Card } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 
 class Dog extends React.Component {
 
     render () {
         return (
-            <p>testforrender</p>
-            // <Card show={this.props.dogAppears}>dadadasd {this.props.dogFeatured}</Card>
+        <>
+            <p>testforrender
+                {/* {this.props.dogFeatured} */}
+            </p>
+            <Modal>
+                {/* <Modal.Title>{this.props.dogFeatured.name}</Modal.Title> */}
+            </Modal>
+            {/* <Card show={this.props.dogAppears}>dadadasd 
+            </Card> */}
+</>
         )
     }
 } 
