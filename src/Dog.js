@@ -6,24 +6,27 @@ class Dog extends React.Component {
     render () {
         return (
         <>
+            Scale is 1 to 5
             <Modal show={this.props.dogAppears} onHide={this.props.handleClose}>
-                <Modal.Header closeButton onClick={this.props.handleClose}>
-                    <Modal.Title>Name-{this.props.dogFeatured.name}
+                {/* <Modal.Header closeButton onClick={this.props.handleClose}> */}
+                    <Modal.Title>Name = {this.props.dogFeatured.name}
                     </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Typical barking amount from 1 to 5={this.props.dogFeatured.barkingAmount}
+                {/* </Modal.Header> */}
+                <Modal.Body>Typical barking amount = {this.props.dogFeatured.barkingAmount}
                     <br/>
-                trainability={this.props.dogFeatured.trainable}
+                Trainability = {this.props.dogFeatured.trainable}
                     <br/>
-                energy level={this.props.dogFeatured.energyAmount} <br/>
-                protectiveness={this.props.dogFeatured.howProtective} <br/>
-                Life expectancy={this.props.dogFeatured.minLifeExpectancy}
-                 to {this.props.dogFeatured.maxLifeExpectancy} years
+                Energy Level = {this.props.dogFeatured.energyAmount} 
+                    <br/>
+                Protectiveness = {this.props.dogFeatured.howProtective} 
+                    <br/>
+                Life Expectancy = {this.props.dogFeatured.minLifeExpectancy}
+                -{this.props.dogFeatured.maxLifeExpectancy} years
                 </Modal.Body>
             </Modal>
             {/* <Card show={this.props.dogAppears}>dadadasd 
             </Card> */}
-</>
+        </>
         )
     }
 } 
