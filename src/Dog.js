@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal } from 'react-bootstrap';
+import { Modal, Image } from 'react-bootstrap';
 
 class Dog extends React.Component {
 
@@ -13,7 +13,9 @@ class Dog extends React.Component {
                     </Modal.Title>
                 {/* </Modal.Header> */}
                 <Modal.Body>
-                    {this.props.dogFeatured.image}
+                    <Image src={this.props.dogFeatured.image} alt={this.props.dogFeatured.name} width={350}/>
+                    {/* Image: {this.props.dogFeatured.image} */}
+                    
                     <br/>
                     Good With Kids: {this.props.dogFeatured.goodWithKids}
                     <br/>
