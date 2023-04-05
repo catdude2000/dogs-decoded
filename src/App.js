@@ -10,7 +10,9 @@ class App extends React.Component {
     this.state = {
       // firstDogsPulled: [],
       dogShown: '',
-      showDog: false
+      showDog: false,
+      errorMessage: '',
+      error: false
     };
   }
 
@@ -21,6 +23,11 @@ handleInput = (event) => {
   });
 }
 
+handleClose = () => {
+  this.setState({
+    showDog: false
+  });
+}
 
   getDogs = async (event) => {
     event.preventDefault();
@@ -51,10 +58,12 @@ handleInput = (event) => {
               <input type='text' onInput={this.handleInput}/>
             </label>
             <button type='submit'>Search</button>
-          </form>
+          </form> 
+          <p>{this.state.errorMessage}</p>
           <Dog
             dogFeatured={this.state.dogShown}
             dogAppears={this.state.showDog}
+            onHide={this.handleClose}
           />
         </>
       )
